@@ -1,21 +1,55 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ReactPasswordStrength from 'react-password-strength';
 
-class App extends Component {
+export default class App extends React.Component {
+  state = { passLength: 0 }
+
+  changeCallback = state =>
+    this.setState({ passLength: state.password.length })
+
+  clear = () => this.ReactPasswordStrength.clear()
+
   render() {
+    const inputProps = {
+      placeholder: "Try a password...",
+      autoFocus: true,
+      className: 'another-input-prop-class-name',
+    };
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+      <div id="example">
+        <h1>React Password Strength Tool</h1>
+        <p>
+          Powered by
+          {' '}
+          <a
+            href="https://github.com/dropbox/zxcvbn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            zxcvbn
+          </a>
         </p>
+
+        <ReactPasswordStrength
+          ref={ref => this.ReactPasswordStrength = ref}
+          minLength={6}
+          inputProps={{ ...inputProps, id: 'inputPassword1' }}
+          changeCallback={this.changeCallback}
+        />
+
+        <button onClick={this.clear} disabled={this.state.passLength === 0}>
+          Clear
+        </button>
+
+        <h3>Password Input with Default Value</h3>
+
+        <ReactPasswordStrength
+          minLength={6}
+          inputProps={{ ...inputProps, id: 'inputPassword2' }}
+          defaultValue="defaultValue"
+        />
       </div>
     );
   }
 }
-
-export default App;
