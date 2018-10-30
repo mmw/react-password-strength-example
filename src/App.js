@@ -49,6 +49,14 @@ export default class App extends React.Component {
           inputProps={{ ...inputProps, id: 'inputPassword2' }}
           defaultValue="defaultValue"
         />
+
+        <h3>Password Input with Custom Styling</h3>
+
+        <ReactPasswordStrength
+          className="CustomInput"
+          minLength={6}
+          inputProps={{ ...inputProps, id: 'inputPassword3' }}
+        />
       </div>
     );
   }

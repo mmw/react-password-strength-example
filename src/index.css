@@ -36,3 +36,21 @@ button:focus {
 button:disabled {
   opacity: 0;
 }
+
+.CustomInput.ReactPasswordStrength {
+  border-color: #111;
+  font-family: serif;
+  font-size: 20px;
+}
+
+.CustomInput.ReactPasswordStrength.is-strength-0 .ReactPasswordStrength-strength-desc { color: #D95D39; }
+.CustomInput.ReactPasswordStrength.is-strength-1 .ReactPasswordStrength-strength-desc { color: #F18805; }
+.CustomInput.ReactPasswordStrength.is-strength-2 .ReactPasswordStrength-strength-desc { color: #FCBA04; }
+.CustomInput.ReactPasswordStrength.is-strength-3 .ReactPasswordStrength-strength-desc { color: #FCBA04; }
+.CustomInput.ReactPasswordStrength.is-strength-4 .ReactPasswordStrength-strength-desc { color: #00A6A6; }
+
+.CustomInput.ReactPasswordStrength.is-strength-0 .ReactPasswordStrength-strength-bar { background: #D95D39; }
+.CustomInput.ReactPasswordStrength.is-strength-1 .ReactPasswordStrength-strength-bar { background: #F18805; }
+.CustomInput.ReactPasswordStrength.is-strength-2 .ReactPasswordStrength-strength-bar { background: #FCBA04; }
+.CustomInput.ReactPasswordStrength.is-strength-3 .ReactPasswordStrength-strength-bar { background: #FCBA04; }
+.CustomInput.ReactPasswordStrength.is-strength-4 .ReactPasswordStrength-strength-bar { background: #00A6A6; }
